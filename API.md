@@ -27,7 +27,7 @@ graph TD
     subgraph Data_Processing
         POST --> NMS[NMSProcessor]
         POST --> CC[CoordinateConverter]
-        ML --> CML[CoreML Model (yolo11n)]
+        ML --> CML[CoreML Model - yolo11n]
     end
     
     subgraph Models
