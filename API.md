@@ -1,22 +1,22 @@
 # SPAIVE API Documentation
 
-SPAIVE (Smart Phone AI Vision Engine) is a high-performance object detection engine based on Core ML and Vision frameworks. It encapsulates the YOLO11n model, providing a complete solution from model loading and preprocessing to inference and post-processing.
+SPAIVE (Smart Phone AI Vision Engine) is a high-performance object detection engine based on Core ML and Vision frameworks. It encapsulates the YOLO11n model, providing a complete solution from model [...]
 
 ## 1. Architecture
 
-The project adopts a layered architecture, providing a unified entry point through the `SPAIVE` facade pattern. The underlying logic is decoupled into `Core`, `PreProcess`, `PostProcess`, and `Video` modules.
+The project adopts a layered architecture, providing a unified entry point through the `SPAIVE` facade pattern. The underlying logic is decoupled into `Core`, `PreProcess`, `PostProcess`, and `Video` [...]
 
 ```mermaid
 graph TD
-    User[Client / App] --> API[SPAIVE (Facade API)]
+    User[Client_App] --> API[SPAIVE (Facade API)]
     
-    subgraph "Public Interface"
+    subgraph Public_Interface
         API --> DS[DetectionService]
         API --> VDS[VideoDetectionService]
         API --> VIS[DetectionVisualizer]
     end
     
-    subgraph "Core Logic"
+    subgraph Core_Logic
         DS --> ML[ModelLoader]
         DS --> PRE[ImagePreprocessor]
         DS --> POST[DetectionPostProcessor]
@@ -24,13 +24,13 @@ graph TD
         VDS --> VFE[VideoFrameExtractor]
     end
     
-    subgraph "Data & Processing"
+    subgraph Data_Processing
         POST --> NMS[NMSProcessor]
         POST --> CC[CoordinateConverter]
         ML --> CML[CoreML Model (yolo11n)]
     end
     
-    subgraph "Models"
+    subgraph Models
         Config[DetectionConfiguration]
         Result[DetectionResult]
         Object[DetectedObject]
