@@ -8,7 +8,7 @@ The project adopts a layered architecture, providing a unified entry point throu
 
 ```mermaid
 graph TD
-    User[Client_App] --> API[SPAIVE (Facade API)]
+    User[Client_App] --> API[SPAIVE_Facade_API)]
     
     subgraph Public_Interface
         API --> DS[DetectionService]
