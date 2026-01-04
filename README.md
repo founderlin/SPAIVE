@@ -16,7 +16,7 @@
 
 ## 📱 Requirements
 
-* iOS 16.0+ / iPadOS 16.0+
+* iOS 26.0
 * Swift 5.9+
 * Xcode 15.0+
 
